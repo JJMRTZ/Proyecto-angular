@@ -1,0 +1,17 @@
+<h2>Artistas</h2>
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Nombre del artista" [(ngModel)]="artista" name="Artistas" >
+  </mat-form-field>
+  <br/>
+  <button mat-stroked-button (click)="obteenerArtista()">Buscar</button>
+</form>
+<hr>
+<ul>
+  @for (artista of artistas(); track $index) {
+    <li>
+      <a [routerLink]="[artista.name]" routerLinkActive="router-link-active" >{{artista.name}}</a>
+    </li>
+  }
+</ul>
